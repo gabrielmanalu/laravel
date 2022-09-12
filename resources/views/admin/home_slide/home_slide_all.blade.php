@@ -11,41 +11,43 @@
             <div class="card">
                 <div class="card-body">
 
-                    <h4 class="card-title">Edit Profile Page</h4>
-                    <form method="POST" action="{{ route('store.profile') }}" enctype="multipart/form-data">
+                    <h4 class="card-title">Home Slide Page</h4>
+                    <form method="POST" action="{{ route('update.slider') }}" enctype="multipart/form-data">
                         @csrf
 
+                        <input type="hidden" name="id" value="{{ $homeslide->id }}">
+
                     <div class="row mb-2">
-                        <label for="name-input" class="col-sm-2 col-form-label">Name</label>
+                        <label for="title-input" class="col-sm-2 col-form-label">Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="name"class="form-control"
-                             value="{{ $editData->name }}"id="name-input">
+                            <input type="text" name="title"class="form-control"
+                             value="{{ $homeslide->title }}"id="title-input">
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <label for="email-input" class="col-sm-2 col-form-label">Email</label>
+                        <label for="short_title-input" class="col-sm-2 col-form-label">Short Title</label>
                         <div class="col-sm-10">
-                            <input type="text" name="email"class="form-control"
-                             value="{{ $editData->email }}"id="email-input">
+                            <input type="text" name="short_title"class="form-control"
+                             value="{{ $homeslide->short_title }}"id="short_title-input">
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <label for="username-input" class="col-sm-2 col-form-label">Username</label>
+                        <label for="video_url-input" class="col-sm-2 col-form-label">Video URL</label>
                         <div class="col-sm-10">
-                            <input type="text" name="username"class="form-control"
-                             value="{{ $editData->username }}"id="username-input">
+                            <input type="text" name="video_url"class="form-control"
+                             value="{{ $homeslide->video_url }}"id="video_url-input">
                         </div>
                     </div>
                     <div class="row mb-2">
-                        <label for="profile-image-input" class="col-sm-2 col-form-label">Profile Image</label>
+                        <label for="home_slide-input" class="col-sm-2 col-form-label">Slider Image</label>
                         <div class="col-sm-10">
-                            <input id="image" type="file" name="profile_image"class="form-control" id="profile-image-input">
+                            <input id="home_slide" type="file" name="home_slide"class="form-control" id="home_slide-input">
                         </div>
                     </div>
                     <div class="row mb-2">
                         <label for="showImage" class="col-sm-2 col-form-label"></label>
                         <div class="col-sm-10">
-                            <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($editData->profile_image))?url('upload/admin_images/'.$editData->profile_image):url('upload/no_image.jpg') }}" alt="Card image cap">
+                            <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($homeslide->home_slide))? url($homeslide->home_slide):url('upload/no_image.jpg') }}" alt="Card image cap">
                         </div>
                     </div>
                         <input type="submit" class="btn btn-success waves-effect waves-light" value="Update Profile">
@@ -55,14 +57,14 @@
         </div> <!-- end col -->
     </div>
 
-    
+
 </div>
 </div>
- 
+
 <script type="text/javascript">
 
     $(document).ready(function(){
-        $('#image').change(function(e){
+        $('#home_slide').change(function(e){
             var reader = new FileReader();
             reader.onload = function(e){
                 $('#showImage').attr('src', e.target.result);
