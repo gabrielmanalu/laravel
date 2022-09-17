@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\HomeSliderController;
 
 /*
@@ -29,8 +30,13 @@ Route::controller(AdminController::class)->group(function () {
 });
 
 Route::controller(HomeSliderController::class)->group(function (){
-    Route::get('home/slide', 'homeSlider')->name('home.slide');
-    Route::post('update/slider', 'updateSlider')->name('update.slider');
+    Route::get('/home/slide', 'homeSlider')->name('home.slide');
+    Route::post('/update/slider', 'updateSlider')->name('update.slider');
+});
+
+Route::controller(AboutController::class)->group(function (){
+    Route::get('/about/page', 'aboutPage')->name('about.page');
+    Route::post('/update/about', 'updateAbout')->name('update.about');
 });
 
 Route::get('/dashboard', function () {
