@@ -55,7 +55,7 @@
                             <img id="showImage" class="rounded avatar-lg" src="{{ (!empty($about->about_image))? url($about->about_image):url('upload/no_image.jpg') }}" alt="Card image cap">
                         </div>
                     </div>
-                        <input type="submit" class="btn btn-success waves-effect waves-light" value="Update Profile">
+                        <input type="submit" class="btn btn-success waves-effect waves-light" value="Update About Page">
                     </form><!-- end row -->
                 </div>
             </div>
