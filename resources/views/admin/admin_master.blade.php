@@ -8,26 +8,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
-        <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}" >
+         <!-- App favicon -->
+         <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
-        <!-- jquery.vectormap css -->
-        <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
+         <!-- jquery.vectormap css -->
+         <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
 
-        <!-- DataTables -->
-        <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+         <!-- DataTables -->
+         <link href="{{ asset('backend/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
-        <!-- Responsive datatable examples -->
-        <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
+         <!-- Responsive datatable examples -->
+         <link href="{{ asset('backend/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" type="text/css" />
 
-        <!-- Bootstrap Css -->
-        <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
-        <!-- Toastr Css-->
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
+         <!-- Bootstrap Css -->
+         <link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" id="bootstrap-style" rel="stylesheet" type="text/css" />
+         <!-- Icons Css -->
+         <link href="{{ asset('backend/assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+         <!-- App Css-->
+         <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+
+         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" >
+
+         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 
 
     </head>
@@ -94,28 +96,10 @@
         <!-- App js -->
         <script src="{{ asset('backend/assets/js/app.js') }}"></script>
 
-        <!--tinymce js-->
-        <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }}"></script>
-
-        <!-- init js -->
-        <script src="{{ asset('backend/assets/js/pages/form-editor.init.js') }}"></script>
-
-
-        <!-- Toastr js -->
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-        <!-- Required datatable js -->
-        <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
 
-        <!-- Datatable init js -->
-        <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
-
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
-
-
-        <script>
+       <script>
          @if(Session::has('message'))
          var type = "{{ Session::get('alert-type','info') }}"
          switch(type){
@@ -137,6 +121,30 @@
          }
          @endif
         </script>
-    </body>
+
+        <!--tinymce js-->
+        <script src="{{ asset('backend/assets/libs/tinymce/tinymce.min.js') }} "></script>
+
+        <!-- init js -->
+        <script src="{{ asset('backend/assets/js/pages/form-editor.init.js') }} "></script>
+
+        <!-- Required datatable js -->
+        <script src="{{ asset('backend/assets/libs/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('backend/assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
+
+            <!-- Datatable init js -->
+        <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+        <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/validate.min.js') }}"></script>
+
+
+        <script src="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.min.js" ></script>
+
+        </body>
 
 </html>
