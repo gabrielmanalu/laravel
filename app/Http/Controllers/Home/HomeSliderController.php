@@ -33,7 +33,7 @@ class HomeSliderController extends Controller
             ]);
 
             $notification = array(
-                'message' => 'Home Slide UpdatedSuccessfully',
+                'message' => 'Home Slide Updated Successfully',
                 'alert-type' => 'success'
             );
 
