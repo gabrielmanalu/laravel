@@ -10,7 +10,7 @@
 <!-- about-area-end -->
 
 <!-- services-area -->
-<section class="services">
+{{-- <section class="services">
     <div class="container">
         <div class="services__title__wrap">
             <div class="row align-items-center justify-content-between">
@@ -138,7 +138,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- services-area-end -->
 
 <!-- work-process-area -->
@@ -147,7 +147,7 @@
         <div class="row justify-content-center">
             <div class="col-xl-6 col-lg-8">
                 <div class="section__title text-center">
-                    <span class="sub-title">03 - Working Process</span>
+                    <span class="sub-title">02 - Working Process</span>
                     <h2 class="title">A clear product design process is the basis of success</h2>
                 </div>
             </div>
@@ -215,7 +215,7 @@
 <!-- portfolio-area-end -->
 
 <!-- partner-area -->
-<section class="partner">
+{{-- <section class="partner">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -258,11 +258,11 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- partner-area-end -->
 
 <!-- testimonial-area -->
-<section class="testimonial">
+{{-- <section class="testimonial">
     <div class="container">
         <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 order-0 order-lg-2">
@@ -311,7 +311,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 <!-- testimonial-area-end -->
 
 <!-- blog-area -->
@@ -325,7 +325,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="section__title">
-                        <span class="sub-title">07 - Say hello</span>
+                        <span class="sub-title">04 - Say hello</span>
                         <h2 class="title">Any questions? Feel free <br> to contact</h2>
                     </div>
                     <div class="homeContact__content">

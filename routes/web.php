@@ -7,6 +7,7 @@ use App\Http\Controllers\Home\BlogCaterogyController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\FooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,11 @@ Route::controller(BlogController::class)->group(function (){
     Route::get('/blog/details/{id}', 'detailBlog')->name('blog.details');
     Route::get('/category/blog/{id}', 'categoryBlog')->name('category.blog');
     Route::get('/home/blog', 'homeBlog')->name('home.blog');
+});
+
+Route::controller(FooterController::class)->group(function (){
+    Route::get('/footer/setup', 'footerSetup')->name('footer.setup');
+    Route::post('/update/footer', 'updateFooter')->name('update.footer');
 });
 
 
