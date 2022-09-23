@@ -7,6 +7,7 @@ use App\Models\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use App\Models\BlogCategory;
+use App\Models\MultiImage;
 use Intervention\Image\ImageManagerStatic as Image;
 
 
@@ -134,6 +135,23 @@ class BlogController extends Controller
         $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
         return view('frontend.blog_details', compact('blog', 'allblogs', 'categories'));
 
+    }
+
+    public function categoryBlog($id){
+        $blogpost = Blog::where('blog_category_id', $id)->orderBy('id', 'DESC')->get();
+        $allblogs = Blog::latest()->limit(5)->get();
+        $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
+        $category = BlogCategory::findorFail($id);
+        $allMultiImage = MultiImage::latest()->limit(3)->get();
+
+        return view('frontend.cat_blog_details', compact('blogpost', 'allblogs', 'categories', 'category', 'allMultiImage'));
+    }
+
+    public function homeBlog(){
+        $allblogs = Blog::latest()->get();
+        $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
+        $allMultiImage = MultiImage::latest()->limit(3)->get();
+        return view('frontend.blog', compact('allblogs', 'categories', 'allMultiImage'));
     }
 
 
