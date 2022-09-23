@@ -1,5 +1,5 @@
 ## About This Project
-This is a Dynamic Website project build with Laravel 9.
+This is a Fullstack Dynamic Website project build with Laravel 9.
 
 Backend theme using Upcube by themesdesign.
 Frontend theme using Rasalina by Theme_pure.
