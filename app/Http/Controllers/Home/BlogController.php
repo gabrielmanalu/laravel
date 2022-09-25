@@ -133,7 +133,8 @@ class BlogController extends Controller
         $blog = Blog::findorFail($id);
         $allblogs = Blog::latest()->limit(5)->get();
         $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
-        return view('frontend.blog_details', compact('blog', 'allblogs', 'categories'));
+        $allMultiImage = MultiImage::latest()->limit(3)->get();
+        return view('frontend.blog_details', compact('blog', 'allblogs', 'categories', 'allMultiImage'));
 
     }
 

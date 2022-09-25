@@ -14,24 +14,23 @@
                                 <ul class="navigation">
                                     <li class="active"><a href="{{ url('/') }}">Home</a></li>
                                     <li><a href="{{ route('home.about') }}">About</a></li>
-                                    <li><a href="services-details.html">Services</a></li>
+                                    {{-- <li><a href="services-details.html">Services</a></li> --}}
                                     <li class="menu-item-has-children"><a href="#">Portfolio</a>
                                         <ul class="sub-menu">
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                            <li><a href="{{ route('portfolio')}}">Portfolio</a></li>
+                                            <li><a href="{{ route('portfolio.details', 1)}}">Portfolio Details</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="{{ route('home.blog') }}">Our Blog</a>
-                                        <ul class="sub-menu">
+                                        {{-- <ul class="sub-menu">
                                             <li><a href="blog.html">Our News</a></li>
                                             <li><a href="blog-details.html">News Details</a></li>
-                                        </ul>
+                                        </ul> --}}
                                     </li>
-                                    <li><a href="contact.html">contact me</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
-                                <a href="contact.html" class="btn">Contact me</a>
+                                <a href="{{ route('contact.me') }}" class="btn">Contact me</a>
                             </div>
                         </nav>
                     </div>

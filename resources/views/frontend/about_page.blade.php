@@ -21,12 +21,13 @@
         </div>
         <div class="breadcrumb__wrap__icon">
             <ul>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon01.png') }}" alt=""></li>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon02.png') }}" alt=""></li>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon03.png') }}" alt=""></li>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon04.png') }}" alt=""></li>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon05.png') }}" alt=""></li>
-                <li><img src="{{ asset('frontend/assets/img/icons/breadcrumb_icon06.png') }}" alt=""></li>
+                @foreach ($allMultiImage as $item)
+                <li>
+                    <li>
+                        <img src="{{ asset($item->multi_image) }}" alt="XD">
+                    </li>
+                </li>
+                @endforeach
             </ul>
         </div>
     </section>
@@ -44,7 +45,7 @@
                 <div class="col-lg-6">
                     <div class="about__content">
                         <div class="section__title">
-                            <span class="sub-title">01 - About me/span>
+                            <span class="sub-title">About me</span>
                             <h2 class="title">{{ $aboutpage->title }}</h2>
                         </div>
                         <div class="about__exp">
@@ -252,7 +253,7 @@
     <!-- about-area-end -->
 
     <!-- services-area -->
-    <section class="services__style__two">
+    {{-- <section class="services__style__two">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 col-md-8">
@@ -363,11 +364,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- services-area-end -->
 
     <!-- testimonial-area -->
-    <section class="testimonial testimonial__style__two">
+    {{-- <section class="testimonial testimonial__style__two">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-9 col-lg-11">
@@ -421,96 +422,15 @@
                 <li><img src="{{ asset('frontend/assets/img/icons/testi_shape06.png') }}" alt=""></li>
             </ul>
         </div>
-    </section>
+    </section> --}}
     <!-- testimonial-area-end -->
 
     <!-- blog-area -->
-    <section class="blog blog__style__two">
-        <div class="container">
-            <div class="row gx-0 justify-content-center">
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="blog__post__item">
-                        <div class="blog__post__thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/assets/img/blog/blog_post_thumb01.jpg') }}" alt=""></a>
-                            <div class="blog__post__tags">
-                                <a href="blog.html">Story</a>
-                            </div>
-                        </div>
-                        <div class="blog__post__content">
-                            <span class="date">13 january 2021</span>
-                            <h3 class="title"><a href="blog-details.html">Facebook design is dedicated to what's new in design</a></h3>
-                            <a href="blog-details.html" class="read__more">Read mORe</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="blog__post__item">
-                        <div class="blog__post__thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/assets/img/blog/blog_post_thumb02.jpg') }}" alt=""></a>
-                            <div class="blog__post__tags">
-                                <a href="blog.html">Social</a>
-                            </div>
-                        </div>
-                        <div class="blog__post__content">
-                            <span class="date">13 january 2021</span>
-                            <h3 class="title"><a href="blog-details.html">Make communication Fast and Effectively.</a></h3>
-                            <a href="blog-details.html" class="read__more">Read mORe</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-9">
-                    <div class="blog__post__item">
-                        <div class="blog__post__thumb">
-                            <a href="blog-details.html"><img src="{{ asset('frontend/assets/img/blog/blog_post_thumb03.jpg') }}" alt=""></a>
-                            <div class="blog__post__tags">
-                                <a href="blog.html">Work</a>
-                            </div>
-                        </div>
-                        <div class="blog__post__content">
-                            <span class="date">13 january 2021</span>
-                            <h3 class="title"><a href="blog-details.html">How to increase your productivity at work - 2021</a></h3>
-                            <a href="blog-details.html" class="read__more">Read mORe</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="blog__button text-center">
-                <a href="blog.html" class="btn">more blog</a>
-            </div>
-        </div>
-    </section>
+    @include('frontend.home_all.home_blog')
     <!-- blog-area-end -->
 
     <!-- contact-area -->
-    <section class="homeContact">
-        <div class="container">
-            <div class="homeContact__wrap">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="section__title">
-                            <span class="sub-title">07 - Say hello</span>
-                            <h2 class="title">Any questions? Feel free <br> to contact</h2>
-                        </div>
-                        <div class="homeContact__content">
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
-                            <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="homeContact__form">
-                            <form action="#">
-                                <input type="text" placeholder="Enter name*">
-                                <input type="email" placeholder="Enter mail*">
-                                <input type="number" placeholder="Enter number*">
-                                <textarea name="message" placeholder="Enter Massage*"></textarea>
-                                <button type="submit">Send Message</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('frontend.home_all.home_contact')
     <!-- contact-area-end -->
 
 </main>

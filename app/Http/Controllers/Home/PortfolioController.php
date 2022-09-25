@@ -5,11 +5,20 @@ namespace App\Http\Controllers\Home;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Portfolio;
+use App\Models\MultiImage;
 use Illuminate\Support\Carbon;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class PortfolioController extends Controller
 {
+
+    public function portfolio(){
+
+        $portfolio = Portfolio::latest()->get();
+        $allMultiImage = MultiImage::latest()->limit(3)->get();
+        return view('frontend.portfolio', compact('portfolio', 'allMultiImage'));
+    }
+
     public function allPortfolio(){
 
         $portfolio = Portfolio::latest()->get();
