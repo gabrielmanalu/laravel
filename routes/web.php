@@ -23,7 +23,7 @@ use App\Http\Controllers\Home\FooterController;
 
 Route::get('/', function () {
     return view('frontend.index');
-});
+})->name('home');
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/logout', 'destroy')->name('admin.logout');

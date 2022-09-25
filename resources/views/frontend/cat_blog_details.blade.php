@@ -1,6 +1,10 @@
 @extends('frontend.main_master')
 @section('main')
 
+@section('title')
+{{ $category->blog_category }} Category
+@endsection
+
 <main>
 
     <!-- breadcrumb-area -->
