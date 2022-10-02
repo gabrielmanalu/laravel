@@ -32,9 +32,9 @@
 
                             <tbody>
                                 @php($i = 1)
-                                @foreach ($blogcategory as $item)
+                                @foreach ($blogcategory as $key => $item)
                                 <tr>
-                                    <td style="text-align:center; vertical-align:middle;"> {{ $i++ }}</td>
+                                    <td style="text-align:center; vertical-align:middle;"> {{ $key+1 }}</td>
                                     <td style="vertical-align:middle;">{{ $item->blog_category }}</td>
                                     <td><a href="{{ route('edit.blog.category', $item->id) }}" class="btn btn-info sm" title="Edit Blog Category" >
                                         <i class="fas fa-edit"></i> </a>

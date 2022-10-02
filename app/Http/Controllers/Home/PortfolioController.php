@@ -14,7 +14,7 @@ class PortfolioController extends Controller
 
     public function portfolio(){
 
-        $portfolio = Portfolio::latest()->get();
+        $portfolio = Portfolio::latest()->paginate(3);
         $allMultiImage = MultiImage::latest()->limit(3)->get();
         return view('frontend.portfolio', compact('portfolio', 'allMultiImage'));
     }

@@ -139,7 +139,7 @@ class BlogController extends Controller
     }
 
     public function categoryBlog($id){
-        $blogpost = Blog::where('blog_category_id', $id)->orderBy('id', 'DESC')->get();
+        $blogpost = Blog::where('blog_category_id', $id)->orderBy('id', 'DESC')->paginate(3);
         $allblogs = Blog::latest()->limit(5)->get();
         $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
         $category = BlogCategory::findorFail($id);
@@ -149,7 +149,7 @@ class BlogController extends Controller
     }
 
     public function homeBlog(){
-        $allblogs = Blog::latest()->get();
+        $allblogs = Blog::latest()->paginate(3);
         $categories = BlogCategory::orderBy('blog_category', 'ASC')->get();
         $allMultiImage = MultiImage::latest()->limit(3)->get();
         return view('frontend.blog', compact('allblogs', 'categories', 'allMultiImage'));

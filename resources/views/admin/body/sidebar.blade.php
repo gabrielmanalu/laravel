@@ -87,7 +87,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="ri-at-fill"></i>
+                        <i class="ri-mail-line"></i>
                         <span>Contact Message</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">

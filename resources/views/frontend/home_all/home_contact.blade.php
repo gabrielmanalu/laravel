@@ -2,7 +2,7 @@
      $footerpage = App\Models\Footer::find(1);
 @endphp
 
-<section class="homeContact">
+<section class="homeContact homeContact__style__two">
     <div class="container">
         <div class="homeContact__wrap">
             <div class="row">

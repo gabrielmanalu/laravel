@@ -31,6 +31,7 @@
                                             <li><a href="blog-details.html">News Details</a></li>
                                         </ul> --}}
                                     </li>
+                                    <li class="{{ ($route == 'contact.me') ? 'active' : '' }}"><a href="{{ route('contact.me') }}">Contact</a></li>
                                 </ul>
                             </div>
                             <div class="header__btn d-none d-md-block">
