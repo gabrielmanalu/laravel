@@ -18,7 +18,7 @@ class AdminController extends Controller
         $request->session()->regenerateToken();
 
         $notification = array(
-            'message' => 'Logout Successfully', 
+            'message' => 'Logout Successfully',
             'alert-type' => 'success'
         );
 
@@ -30,7 +30,7 @@ class AdminController extends Controller
         $adminData = User::find($id);
         return view('admin.admin_profile_view', compact('adminData'));
     }
-    
+
     public function editProfile(){
         $id = Auth::user()->id;
         $editData = User::find($id);
@@ -46,8 +46,11 @@ class AdminController extends Controller
 
         if($request->file('profile_image')) {
             $file = $request->file('profile_image');
+
+            @unlink(public_path('upload/admin_images/'.$data->profile_image));
+
             $filename = date('YmdHi').$file->getClientOriginalName();
-            $file->move(public_path('upload\admin_images'), $filename);
+            $file->move(public_path('upload/admin_images'), $filename);
             $data['profile_image'] = $filename;
         }
         $data->save();
@@ -66,7 +69,7 @@ class AdminController extends Controller
         return view('admin.admin_change_password', compact('editData'));
     }
 
-    public function updatePassword(Request $request){   
+    public function updatePassword(Request $request){
         $valideData = $request->validate([
             'old_password' => 'required',
             'new_password' => 'required',
@@ -79,12 +82,12 @@ class AdminController extends Controller
             'message' => 'Use Another Password',
             'alert-type' => 'error'
         );
-        
+
         if (Hash::check($request->old_password, $hashedPassword)) {
 
             if (Hash::check($request->new_password, $hashedPassword)){
                 return redirect()->back()->with($notification);
-            }    
+            }
             else {
                 $users = User::find(Auth::id());
                 $users->password = bcrypt($request->new_password);
